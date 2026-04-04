@@ -1,0 +1,57 @@
+:root {
+  --bg: #0a0f1f;
+  --card: #121d37;
+  --text: #e8eeff;
+  --muted: #97a5c9;
+  --border: rgba(255, 255, 255, 0.12);
+  --primary: #4f8cff;
+}
+
+* {
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #1b2e59 0%, #0a0f1f 45%);
+  color: var(--text);
+}
+
+.auth-wrap {
+  min-height: 100vh;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 460px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.auth-card p {
+  color: var(--muted);
+}
+
+.form-control {
+  background: #0f1730;
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.form-control::placeholder {
+  color: #91a0c7;
+}
+
+.form-control:focus {
+  background: #0f1730;
+  color: var(--text);
+  box-shadow: none;
+  border-color: rgba(79, 140, 255, 0.7);
+}
+
+.btn-primary {
+  background: var(--primary);
+  border-color: var(--primary);
+}

@@ -1,0 +1,139 @@
+:root {
+  --bg: #0a0f1f;
+  --sidebar: #101a31;
+  --card: #131f3b;
+  --text: #e6edff;
+  --muted: #98a6c9;
+  --border: rgba(255, 255, 255, 0.1);
+  --primary: #4f8cff;
+}
+
+* {
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 260px;
+  background: var(--sidebar);
+  border-right: 1px solid var(--border);
+  padding: 24px 18px;
+}
+
+.brand {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 1.2rem;
+  margin-bottom: 24px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.menu-link {
+  text-decoration: none;
+  color: #c7d3f7;
+  padding: 10px 12px;
+  border-radius: 10px;
+}
+
+.menu-link:hover,
+.menu-link.active {
+  background: rgba(79, 140, 255, 0.2);
+  color: #fff;
+}
+
+.content-wrap {
+  flex: 1;
+  min-width: 0;
+}
+
+.topbar {
+  border-bottom: 1px solid var(--border);
+  padding: 18px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.main-content {
+  padding: 22px;
+}
+
+.stat-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.stat-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.stat-card h3 {
+  margin: 8px 0 0;
+  font-size: 1.8rem;
+}
+
+.card-box {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.form-control,
+.form-select {
+  background-color: #0f1730;
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.form-control::placeholder {
+  color: #91a1c7;
+}
+
+.form-control:focus,
+.form-select:focus {
+  background-color: #0f1730;
+  color: var(--text);
+  border-color: rgba(79, 140, 255, 0.7);
+  box-shadow: none;
+}
+
+.table-search {
+  max-width: 220px;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+@media (max-width: 992px) {
+  .admin-layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+}

@@ -1,0 +1,77 @@
+:root {
+  --bg: #0a0f1f;
+  --panel: #121d37;
+  --panel-soft: #18274a;
+  --text: #e8eeff;
+  --muted: #96a5cb;
+  --border: rgba(255, 255, 255, 0.1);
+  --primary: #4f8cff;
+}
+
+* {
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.page-wrap {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 12px;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.panel-soft {
+  background: var(--panel-soft);
+}
+
+.title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.form-control,
+.form-select {
+  background: #0f1730;
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.form-control::placeholder {
+  color: #8d9bc2;
+}
+
+.form-control:focus,
+.form-select:focus {
+  background: #0f1730;
+  color: var(--text);
+  box-shadow: none;
+  border-color: rgba(79, 140, 255, 0.7);
+}
+
+.table {
+  --bs-table-bg: transparent;
+  --bs-table-color: var(--text);
+  --bs-table-border-color: var(--border);
+}
+
+.table-hover > tbody > tr:hover > * {
+  --bs-table-bg-state: rgba(79, 140, 255, 0.08);
+}
+
+.btn-primary {
+  background: var(--primary);
+  border-color: var(--primary);
+}
