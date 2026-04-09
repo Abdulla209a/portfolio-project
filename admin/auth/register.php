@@ -26,8 +26,8 @@ session_start();
           <li class="color:yellow"><?php echo $error; ?></li>
           
           <?php
-        endforeach;
-      endif;
+        endforeach;                              endif;
+        
         unset($_SESSION['errors']);
       ?>
       </p></ul>

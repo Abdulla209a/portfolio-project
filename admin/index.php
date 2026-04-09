@@ -22,7 +22,7 @@ if (!isset($_SESSION['user_id'])) {
 <body>
   <div class="admin-layout">
     <aside class="sidebar">
-      <a href="#" class="brand">AZ Admin</a>
+      <a href="#" class="brand">AA Admin</a>
       <nav class="menu">
         <a href="#" class="menu-link active">Dashboard</a>
         <a href="#" class="menu-link">Loyihalar</a>

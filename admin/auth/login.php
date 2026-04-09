@@ -20,8 +20,19 @@ session_start();
       <h1 class="h4 mb-2">Admin tizimga kirish</h1>
       <p class="mb-4">Portfolio boshqaruv paneliga kirish uchun ma'lumotlarni kiriting.</p>
 
+      <?php if (!empty($_SESSION['errors'])): ?>
+        <?php foreach($_SESSION['errors'] as $error): ?>
+
+          <li style="color: yellow;"><?php echo $error; ?></li>
+            
+          </div>
+        <?php endforeach; ?>
+        <?php unset($_SESSION['errors']); ?>
+      <?php endif; ?>
+
       <form class="row g-3" action="auth.php" method="POST">
         <div class="col-12">
+          
           <label class="form-label">Email</label>
           <input type="email" class="form-control" placeholder="admin@mail.com" name="email">
         </div>
