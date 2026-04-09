@@ -6,7 +6,7 @@ session_start();
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Azamat Portfolio</title>
+  <title>Abdulla's Portfolio</title>
   <meta name="description" content="Frontend va web dizayn portfolio single page sahifasi.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +18,7 @@ session_start();
   <header class="header-area">
     <nav class="navbar navbar-expand-lg fixed-top custom-navbar">
       <div class="container">
-        <a class="navbar-brand fw-bold text-white" href="#home">AZ Portfolio</a>
+        <a class="navbar-brand fw-bold text-white" href="#home">AA Portfolio</a>
         <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -54,19 +54,19 @@ session_start();
               <div class="row g-3">
                 <div class="col-6">
                   <div class="stat-box">
-                    <h3>2+</h3>
+                    <h3>1+</h3>
                     <p>Yillik tajriba</p>
                   </div>
                 </div>
                 <div class="col-6">
                   <div class="stat-box">
-                    <h3>2+</h3>
+                    <h3>1+</h3>
                     <p>Tugallangan loyiha</p>
                   </div>
                 </div>
                 <div class="col-6">
                   <div class="stat-box">
-                    <h3>2+</h3>
+                    <h3>1+</h3>
                     <p>Mamnun mijoz</p>
                   </div>
                 </div>
@@ -206,23 +206,23 @@ session_start();
             <h2 class="section-title">Bog'lanish</h2>
             <p class="mb-4">Yangi loyiha boshlamoqchimisiz? Menga yozing, qisqa vaqt ichida javob beraman.</p>
             <ul class="contact-list list-unstyled">
-              <li><strong>Telefon:</strong> +998 90 123 45 67</li>
-              <li><strong>Email:</strong> hello@portfolio.uz</li>
-              <li><strong>Manzil:</strong> Toshkent, O'zbekiston</li>
+              <li><strong>Telefon:</strong> +998 94 652 55 94</li>
+              <li><strong>Email:</strong> Abdullaatajanovv@gmail.com</li>
+              <li><strong>Manzil:</strong> Xorazm, O'zbekiston</li>
             </ul>
           </div>
           <div class="col-lg-7">
             <?php
             if(!empty($_SESSION['errors'])){
-              echo "<ul>";
+              echo "<ul class='alert alert-danger'>";
               foreach($errors as $error){
                 echo "<li>$error</li>";
               }
-              echo "</ul>";
+              echo "</ul class='alert alert-danger'>";
               unset($_SESSION['errors']);
             }
             if(!empty($_SESSION['success'])){
-              echo $_SESSION ['success'];
+              echo "<div class='alert alert-success'>{$_SESSION['success']}</div>";
               unset($_SESSION['success']);
             }
             
@@ -254,7 +254,7 @@ session_start();
 
   <footer class="footer-area py-4">
     <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
-      <p class="mb-0">© 2026 AZ Portfolio. Barcha huquqlar himoyalangan.</p>
+      <p class="mb-0">© 2026 AA Portfolio. Barcha huquqlar himoyalangan.</p>
       <p class="mb-0">Bootstrap asosida yaratilgan single-page portfolio</p>
     </div>
   </footer>

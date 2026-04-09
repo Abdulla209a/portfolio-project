@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <!doctype html>
 <html lang="uz">
 <head>
@@ -15,14 +19,15 @@
     <section class="auth-card">
       <h1 class="h4 mb-2">Admin tizimga kirish</h1>
       <p class="mb-4">Portfolio boshqaruv paneliga kirish uchun ma'lumotlarni kiriting.</p>
-      <form class="row g-3">
+
+      <form class="row g-3" action="auth.php" method="POST">
         <div class="col-12">
           <label class="form-label">Email</label>
-          <input type="email" class="form-control" placeholder="admin@mail.com">
+          <input type="email" class="form-control" placeholder="admin@mail.com" name="email">
         </div>
         <div class="col-12">
           <label class="form-label">Parol</label>
-          <input type="password" class="form-control" placeholder="********">
+          <input type="password" class="form-control" placeholder="********" name="password">
         </div>
         <div class="col-12 d-flex justify-content-between align-items-center">
           <div class="form-check">
@@ -32,7 +37,7 @@
           <a href="#" class="text-decoration-none">Parolni unutdingizmi?</a>
         </div>
         <div class="col-12">
-          <button type="button" class="btn btn-primary w-100">Kirish</button>
+          <button type="submit" class="btn btn-primary w-100">Kirish</button>
         </div>
       </form>
       <p class="mt-4 mb-0">Account yo'qmi? <a href="register.php" class="text-decoration-none">Ro'yxatdan o'tish</a></p>
