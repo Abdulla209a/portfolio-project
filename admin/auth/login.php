@@ -23,7 +23,7 @@ session_start();
       <?php if (!empty($_SESSION['errors'])): ?>
         <?php foreach($_SESSION['errors'] as $error): ?>
 
-          <li style="color: yellow;"><?php echo $error; ?></li>
+          <li style="color: yellow;"><?php echo $error; ?></li> 
             
           </div>
         <?php endforeach; ?>

@@ -40,7 +40,7 @@ session_start();
       <div class="container">
         <div class="row align-items-center g-4">
           <div class="col-lg-7">
-            <span class="badge hero-badge mb-3">Frontend Developer & UI Designer</span>
+            <span class="badge hero-badge mb-3">Backend Developer </span>
             <h1 class="display-4 fw-bold mb-3">Portfolio sahifamga xush kelibsiz</h1>
             <p class="lead text-light-emphasis mb-4">Men zamonaviy, tezkor va mobilga mos web sahifalar yarataman. Quyida mening xizmatlarim va tayyor loyihalarim bilan tanishishingiz mumkin.</p>
             <div class="d-flex flex-wrap gap-3">
@@ -54,26 +54,26 @@ session_start();
               <div class="row g-3">
                 <div class="col-6">
                   <div class="stat-box">
-                    <h3>1+</h3>
+                    <h3>2+</h3>
                     <p>Yillik tajriba</p>
                   </div>
                 </div>
                 <div class="col-6">
                   <div class="stat-box">
-                    <h3>1+</h3>
+                    <h3>3+</h3>
                     <p>Tugallangan loyiha</p>
                   </div>
                 </div>
                 <div class="col-6">
                   <div class="stat-box">
-                    <h3>1+</h3>
+                    <h3>2+</h3>
                     <p>Mamnun mijoz</p>
                   </div>
                 </div>
                 <div class="col-6">
                   <div class="stat-box">
                     <h3>100%</h3>
-                    <p>Responsive dizayn</p>
+                    <p>Responsive backend xizmat</p>
                   </div>
                 </div>
               </div>
@@ -96,7 +96,7 @@ session_start();
             <div class="row g-3 mt-2">
               <div class="col-md-6">
                 <div class="skill-item">
-                  <span>HTML / CSS</span>
+                  <span>HTML / CSS </span>
                   <div class="progress">
                     <div class="progress-bar" style="width: 95%;">95%</div>
                   </div>
@@ -245,11 +245,11 @@ session_start();
                   <button type="submit" class="btn btn-primary px-4">Yuborish</button>
                 </div>
               </div>
-            </form>
+            </form> 
           </div>
         </div>
       </div>
-    </section>
+    </section> 
   </main>
 
   <footer class="footer-area py-4">
