@@ -29,9 +29,15 @@ if(count($errors)>0){
 }
 else{
     try {
-        $sql="INSERT INTO project(name,email,subject,message) VALUES(:name,:email,:subject,:message)";
+        $sql="INSERT INTO contacts(name,email,subject,message,view) VALUES(:name,:email,:subject,:message,:view)";
         $stmt=$conn->prepare($sql);
-        $stmt->execute(['name'=>$name,'email'=>$email,'subject'=>$subject,'message'=>$message]);
+        $stmt->execute([
+            ':name'=>$name,
+            ':email'=>$email,
+            ':subject'=>$subject,
+            ':message'=>$message,
+            ':view'=>0
+        ]);
         $_SESSION['success']="Xabar muvaffaqiyatli yuborildi";
         header("Location: ../index.php");
     } catch(PDOException $e) {

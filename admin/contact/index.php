@@ -1,24 +1,21 @@
-<!doctype html>
-<html lang="uz">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact CRUD - List</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/contact.css">
-</head>
-<body>
-  <div class="page-wrap">
+<?php
+require("../../db/connect.php"); 
+$base_url = "../";
+include("../layouts/app.php");
+$sql = "SELECT * FROM contacts  ORDER BY id DESC  ";
+$stmt=$conn->prepare($sql);
+$stmt->execute();
+$contacts = $stmt->fetchAll();
+
+?>
+
     <div class="panel mb-3">
       <div class="title-row">
         <div>
           <h1 class="h4 mb-1">Contact xabarlari</h1>
           <small class="text-secondary">CRUD dizayn - list ko'rinishi</small>
         </div>
-        <a href="create.php" class="btn btn-primary btn-sm">+ Yangi xabar</a>
+      
       </div>
       <div class="row g-2">
         <div class="col-md-4"><input type="text" class="form-control" placeholder="Ism bo'yicha qidirish"></div>
@@ -38,25 +35,50 @@
               <th>Mavzu</th>
               <th>Sana</th>
               <th>Amal</th>
+               <th>status</th>
             </tr>
           </thead>
           <tbody>
+            <?php 
+            $item=0;
+             foreach($contacts as $contact):
+             $item++; ?>
             <tr>
-              <td>1</td>
-              <td>Ali Valiyev</td>
-              <td>ali@mail.com</td>
-              <td>Yangi loyiha</td>
-              <td>2026-04-02</td>
+              <td><?= $item ?></td>
+              <td><?= $contact['name'] ?></td>
+              <td><?= $contact['email'] ?></td>
+              <td><?= $contact['subject'] ?></td>
+              <td><?= $contact['created_at'] ?></td>
               <td class="d-flex gap-2">
-                <a class="btn btn-sm btn-outline-info" href="show.php">Ko'rish</a>
-                <a class="btn btn-sm btn-outline-warning" href="edit.php">Edit</a>
-                <button class="btn btn-sm btn-outline-danger">Delete</button>
+                   <a href="show.php?id=<?=$contact["id"]?>" class="btn btn-sm btn-outline-info" >Ko'rish</a>
+                   
+<form action="delete.php" method="POST">
+    <input type="hidden" name="id" value="<?= $contact["id"] ?>">
+    <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+</form>
+
+
+                
+                
+                 </form>
+              </td>
+              <td>
+                <?php if($contact['view'] == 0): ?>
+                  <span class="badge text-bg-primary">Yangi</span>
+                <?php else: ?>
+                  <span class="badge text-bg-success">Ko'rilgan</span>
+                <?php endif; ?>
               </td>
             </tr>
+            <?php endforeach; ?>
           </tbody>
         </table>
       </div>
     </div>
   </div>
+</div>
+</div>
+</div>
+
 </body>
 </html>

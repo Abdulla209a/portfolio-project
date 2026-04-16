@@ -1,33 +1,37 @@
-<!doctype html>
-<html lang="uz">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact CRUD - Show</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/contact.css">
-</head>
-<body>
+<?php
+require("../../db/connect.php");
+$base_url="../";
+include("../layouts/app.php");
+(int)$id=!empty($_GET["id"])? (int)$_GET["id"] : 0;
+if($id===0){
+  header("Location:index.php");
+}else{
+  $sql="SELECT * FROM contacts WHERE id=:id";
+  $stmt=$conn->prepare($sql);
+  $stmt->execute([
+    ':id'=>$id
+  ]);
+  $contact=$stmt->fetch();
+  
+  $sql="UPDATE contacts SET view=1";
+  $stmt=$conn->prepare($sql);
+  $stmt->execute();
+}
+
+?>
   <div class="page-wrap">
     <div class="panel">
-      <div class="title-row">
-        <h1 class="h4 mb-0">Contact xabar tafsiloti</h1>
-        <a href="index.php" class="btn btn-outline-light btn-sm">Orqaga</a>
-      </div>
       <div class="row g-3">
         <div class="col-md-6">
           <div class="panel panel-soft">
             <small class="text-secondary d-block mb-1">Ism</small>
-            <strong>Ali Valiyev</strong>
+            <strong><?=$contact["name"]?></strong>
           </div>
         </div>
         <div class="col-md-6">
           <div class="panel panel-soft">
             <small class="text-secondary d-block mb-1">Email</small>
-            <strong>ali@mail.com</strong>
+            <strong><?=$contact["email"]?></strong>
           </div>
         </div>
         <div class="col-md-6">
@@ -47,6 +51,9 @@
             <small class="text-secondary d-block mb-2">Xabar matni</small>
             <p class="mb-0">Assalomu alaykum, men portfolio saytingiz uslubida yangi loyiha qildirmoqchiman.</p>
           </div>
+        </div>
+        <div class="row" >
+          <a href="index.php" class="btn btn-sm btn-success" >qaytish</a>
         </div>
       </div>
     </div>
